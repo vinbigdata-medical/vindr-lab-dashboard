@@ -1,0 +1,26 @@
+@import '../../../variables.scss';
+
+.task-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .task-container {
+    .table-wrapper {
+      .table-content {
+        .task-archived {
+          color: $font-red-color;
+        }
+        .task-status {
+          color: $defautl-font-color;
+          &.doing {
+            color: #ffa000;
+          }
+          &.completed {
+            color: $app-primary-color;
+          }
+        }
+      }
+    }
+  }
+}

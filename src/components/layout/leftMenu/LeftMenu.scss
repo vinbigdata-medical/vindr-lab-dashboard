@@ -1,0 +1,127 @@
+@import '../../../variables.scss';
+
+@mixin setLeftMenuWidth($width) {
+  width: $width !important;
+  flex: 0 0 $width !important;
+  max-width: $width !important;
+  min-width: $width !important;
+}
+
+.left-layout-sider {
+  @include setLeftMenuWidth($left-menu-width);
+  position: relative;
+  padding-bottom: 0;
+  background: $app-bg-color;
+
+  &.ant-layout-sider-collapsed {
+    @include setLeftMenuWidth($left-menu-collapsed-width);
+    .ant-layout-sider-trigger {
+      svg {
+        transform: rotate(180deg);
+        path {
+          fill: $app-primary-color;
+        }
+      }
+    }
+    .ant-menu-item {
+      .anticon {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .ant-layout-sider-trigger {
+    width: 10px !important;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+    background: rgba(194, 207, 224, 0.6);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 27px;
+    line-height: 27px;
+    text-align: left;
+    svg {
+      margin-left: 3px;
+      path {
+        fill: $app-primary-color;
+      }
+    }
+  }
+
+  .sider-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
+    padding: 8px 0 8px 8px;
+    .left-menu-wrapper {
+      height: 100%;
+      background: $app-bg-box;
+      border-radius: $border-box-radius;
+      overflow: hidden;
+      .menu-list {
+        border: none;
+        color: $defautl-font-color;
+        font-weight: 500;
+        font-size: 13px;
+        background: transparent;
+        &.ant-menu-inline-collapsed {
+          width: 100%;
+          max-width: 75px;
+          .ant-menu-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            .anticon {
+              line-height: normal;
+              display: flex;
+            }
+          }
+        }
+
+        .ant-menu-item {
+          width: 100%;
+          .anticon {
+            svg {
+              width: 22px;
+              height: 22px;
+            }
+          }
+          span {
+            vertical-align: middle;
+          }
+          &.ant-menu-item-selected,
+          &:hover {
+            color: $app-primary-color;
+            svg {
+              path,
+              circle,
+              rect {
+                fill: $app-primary-color;
+              }
+            }
+          }
+          &::after {
+            content: none;
+          }
+        }
+      }
+
+      .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: rgba(0, 184, 148, 0.2);
+        &::after {
+          border: none;
+        }
+      }
+    }
+
+    &.ant-layout-sider-collapsed {
+      @include setLeftMenuWidth($left-menu-collapsed-width);
+    }
+  }
+}

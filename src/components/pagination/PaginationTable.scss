@@ -1,0 +1,123 @@
+@import '../../variables.scss';
+
+.pagination-table {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+
+  .page-size-option {
+    color: $defautl-font-color;
+    margin: 0 10px;
+    font-size: 12px;
+    .ant-select-selector {
+      background: #151515;
+      border: none;
+      height: 24px;
+      .ant-select-selection-item {
+        line-height: 24px;
+      }
+    }
+    .ant-select-arrow {
+      color: $defautl-font-color;
+      font-size: 10px;
+    }
+  }
+
+  .ant-pagination {
+    font-size: 12px;
+    .ant-pagination-item-link {
+      .ant-pagination-item-ellipsis {
+        color: rgba(209, 209, 215, 0.4);
+      }
+    }
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      width: 24px;
+      min-width: 24px;
+      height: 24px;
+      line-height: 24px;
+      .ant-pagination-item-link {
+        border-radius: 50%;
+        background: transparent;
+        color: $defautl-font-color;
+        border-width: 0;
+      }
+      &:hover,
+      &:focus {
+        .ant-pagination-item-link {
+          color: #00b894;
+        }
+      }
+    }
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next {
+      .ant-pagination-item-link-icon {
+        color: #00b894;
+      }
+    }
+    .ant-pagination-item {
+      border: none;
+      background: inherit;
+      text-decoration: underline;
+      a {
+        color: $defautl-font-color;
+      }
+      &:hover,
+      &:focus {
+        a {
+          color: #00b894;
+        }
+      }
+      &.ant-pagination-item-active {
+        a {
+          color: #00b894;
+        }
+      }
+    }
+  }
+
+  .ant-pagination-disabled {
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      &:hover,
+      &:focus {
+        .ant-pagination-item-link {
+          color: #354053;
+          border-color: #354053;
+        }
+      }
+    }
+    .ant-pagination-item {
+      &:hover,
+      &:focus {
+        a {
+          color: #354053;
+        }
+      }
+      &.ant-pagination-item-active {
+        a {
+          color: #00b894;
+        }
+      }
+    }
+  }
+  .ant-pagination-disabled {
+    &.ant-pagination-prev,
+    &.ant-pagination-next {
+      &:hover,
+      &:focus {
+        .ant-pagination-item-link {
+          color: #354053;
+          border-color: #354053;
+        }
+      }
+    }
+  }
+  .info-page-size {
+    background: rgba(194, 207, 224, 0.36);
+    border-radius: 70px;
+    padding: 5px 14px;
+  }
+}

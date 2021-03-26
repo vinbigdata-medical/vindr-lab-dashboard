@@ -1,0 +1,47 @@
+.job-build-docker-image: &build-docker-image
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - apk add python3 py-pip
+    - echo ${DOCKERHUB_PASSWORD} | docker login --username ${DOCKERHUB_USERNAME} --password-stdin
+    - export DOCKER_IMAGE_NAME=vindr/vinlab-dashboard:latest
+
+image: node:lts
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+before_script:
+  - ls -la .
+  - node -v
+
+stages:
+  - build-docker-image
+
+build-docker-image:latest:
+  <<: *build-docker-image
+  stage: build-docker-image
+  only:
+    - master
+    - develop
+    - cicd
+    - open_source
+  script:
+    - docker build -t ${DOCKER_IMAGE_NAME} .
+    - docker push ${DOCKER_IMAGE_NAME}
+
+build-docker-image:tags:
+  <<: *build-docker-image
+  stage: build-docker-image
+  only:
+    - tags
+  script:
+    - docker build -t ${DOCKER_IMAGE_NAME}:${CI_COMMIT_REF_NAME} .
+    - docker push ${DOCKER_IMAGE_NAME}:${CI_COMMIT_REF_NAME}

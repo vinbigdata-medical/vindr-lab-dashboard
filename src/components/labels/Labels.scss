@@ -1,0 +1,202 @@
+@import '../../variables.scss';
+
+.create-label-modal {
+  .ant-form {
+    .ant-form-item {
+      flex-direction: row !important;
+    }
+  }
+
+  .btn-delete-label {
+    border-color: #ff4d4f !important;
+  }
+
+  .btn-pick-color {
+    height: 22px;
+    width: 22px;
+    min-width: unset;
+    border: none;
+    padding: 0;
+  }
+}
+
+.label-groups {
+  padding: 8px;
+  height: 100%;
+  .header-label-groups {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .lb-title {
+      font-size: 16px;
+    }
+    .btn-add-label-group {
+      margin-left: auto;
+    }
+  }
+
+  .label-groups-content {
+    .form-lb-group {
+      .ant-input-search {
+        background: transparent;
+        .ant-input {
+          background: transparent;
+          color: $defautl-font-color;
+          height: 32px;
+        }
+        .ant-input-group-addon {
+          background: transparent;
+          .ant-input-search-button {
+            border: none;
+            height: 32px;
+          }
+        }
+      }
+      .ant-form-item:not(.ant-form-item-has-error) {
+        .ant-form-item-control {
+          .ant-input {
+            border-color: $app-box-border-color;
+            &:focus,
+            &:hover {
+              border-color: $app-primary-color;
+            }
+          }
+        }
+      }
+    }
+    .lb-group-list {
+      .lb-group-item {
+        padding: 12px 8px;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        &.active-item {
+          background-color: $app-bg-box;
+        }
+      }
+    }
+  }
+}
+
+.labels-wrapper {
+  background: $app-bg-box;
+  border-radius: $border-box-radius;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  .header-labels {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .group-info {
+      display: flex;
+      align-items: center;
+      .lb-title {
+        margin-right: 10px;
+        color: $defautl-font-color;
+      }
+    }
+    .lb-title {
+      font-size: 16px;
+    }
+    .btn-add-label {
+      margin-left: auto;
+    }
+  }
+
+  .labels-content {
+    .txt-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .finding-wrapper {
+      margin-bottom: 25px;
+    }
+    .label-table {
+      .ant-table-wrapper {
+        border-radius: 5px;
+        overflow: hidden;
+        .ant-table-container {
+          background: #3f444f !important;
+        }
+      }
+      .ant-table-thead {
+        background: red;
+        tr {
+          th {
+            background: #3f444f !important;
+            border-right: 2px solid #303237 !important;
+            &:last-child {
+              border-right: none !important;
+            }
+          }
+        }
+      }
+      .ant-table-tbody {
+        background: #1e2025;
+        tr {
+          td {
+            vertical-align: top;
+          }
+          &:hover {
+            td {
+              background: rgba(76, 78, 87, 0.4) !important;
+            }
+          }
+        }
+      }
+      .lb-list {
+        .lb-wrap-item {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .lb-color {
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          margin-right: 12px;
+        }
+
+        .lb-item {
+          padding: 3px;
+          span {
+            cursor: pointer;
+          }
+        }
+
+        .sub-labels {
+          padding-left: 18px;
+          margin-bottom: 4px;
+          .sub-label-item {
+            padding: 3px;
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+
+  .select-managers {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    .lb-title {
+      font-size: 16px;
+      color: #d1d1d7;
+    }
+    .ant-select-selector {
+      background: #26292e;
+      color: #d1d1d7;
+      border: 1px solid #53555a;
+      .ant-select-selection-item {
+        background: #363a42;
+        border: none;
+        .ant-select-selection-item-remove {
+          color: #d1d1d7;
+        }
+      }
+    }
+  }
+}

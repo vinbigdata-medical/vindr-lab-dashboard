@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+.loading-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 0.15s ease-in;
+}
+
+.loading-wrapper.ld-show {
+  opacity: 1;
+  z-index: 999;
+  display: block;
+}
+
+.loading-wrapper.ld-hide {
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
+
+.ld-dim-light {
+  background: rgba(255, 255, 255, 1);
+}
+
+.ld-dim-dark {
+  background: rgba($color: $app-bg-page-content, $alpha: 1);
+}
+
+.middle-sreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1993;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

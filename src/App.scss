@@ -1,0 +1,247 @@
+@import 'variables.scss';
+
+.app-container {
+  height: 100vh;
+  .content-container {
+    height: calc(100vh - #{$header-height});
+    overflow: auto;
+    background: $app-bg-color;
+    padding: 8px;
+    color: $defautl-font-color;
+  }
+}
+
+.common-style-page {
+  background: $app-bg-page-content;
+  border-radius: $border-box-radius;
+  min-height: 100%;
+  .top-content {
+    .breadcrumb-content {
+      padding: 8px 8px 0 8px;
+    }
+    .page-header {
+      color: $defautl-font-color;
+      padding: 8px;
+      .title {
+        font-size: 24px;
+      }
+    }
+  }
+}
+.dark-table {
+  .ant-table {
+    font-size: 13px;
+    .ant-checkbox:not(.ant-checkbox-checked) {
+      .ant-checkbox-inner {
+        background: transparent;
+      }
+    }
+
+    .ant-table-content,
+    .ant-table-container {
+      background: $app-bg-page-content;
+      color: $defautl-font-color;
+      .ant-table-thead {
+        background: $app-bg-page-content;
+        tr {
+          border: none;
+          th {
+            border: none;
+            border-radius: 0;
+            background: $app-bg-page-content;
+            color: $defautl-font-color;
+          }
+
+          th.ant-table-column-has-sorters:hover {
+            background: $app-bg-page-content;
+          }
+        }
+        .ant-table-cell-scrollbar {
+          box-shadow: none;
+        }
+      }
+      .ant-table-tbody {
+        tr {
+          td {
+            background: rgba(76, 78, 87, 0.4);
+            border-bottom: 5px solid $app-bg-box;
+            .ant-empty {
+              color: $defautl-font-color;
+            }
+          }
+          &.ant-table-row-selected {
+            background-color: rgba(23, 185, 120, 0.2);
+            td {
+              // color: $app-primary-color;
+            }
+          }
+          &:last-child {
+            td {
+              border-bottom: none;
+            }
+          }
+          &:hover {
+            td {
+              background: rgba(76, 78, 87, 0.8);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin modal-buttons {
+  .ant-btn {
+    min-width: 110px;
+    min-height: 42px;
+    border-radius: 4px;
+    border: 1px solid $app-primary-color;
+    box-sizing: border-box;
+    color: $app-primary-color;
+    box-shadow: 6px 16px 20px rgba(0, 0, 0, 0.06);
+  }
+  .ant-btn-primary {
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(16, 156, 241, 0.24);
+    margin-left: 20px;
+  }
+}
+
+.common-modal {
+  .ant-modal-content {
+    border-radius: 10px;
+    .ant-modal-header {
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      background: #dddddd;
+      .ant-modal-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #192a3e;
+      }
+    }
+    .ant-modal-body {
+      .ant-modal-confirm-btns {
+        @include modal-buttons;
+      }
+    }
+    .ant-modal-footer {
+      padding: 13px 24px 24px 24px;
+      border-top: none;
+      border-bottom-left-radius: $border-box-radius;
+      border-bottom-right-radius: $border-box-radius;
+      @include modal-buttons;
+    }
+  }
+
+  // common style for form item
+  .ant-form {
+    .ant-form-item {
+      display: flex;
+      flex-direction: column;
+      .ant-form-item-label {
+        .ant-form-item-required-comment {
+          &::before {
+            content: none;
+          }
+          &::after {
+            display: inline-block;
+            margin-left: 4px;
+            color: #ff4d4f;
+            font-size: 11px;
+            line-height: 1;
+            content: '*';
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed-upload-modal {
+  .import-data-modal {
+    .ant-modal-content {
+      .ant-modal-close {
+        height: 54px;
+        line-height: 54px;
+        width: unset;
+        &:hover {
+          color: rgba(0, 0, 0, 0.45);
+        }
+        .ant-modal-close-x {
+          width: unset;
+          height: 54px;
+          line-height: 54px;
+          cursor: default;
+          .btn-header {
+            padding-right: 16px;
+            .btn-ic {
+              margin-right: 10px;
+              cursor: pointer;
+              &:last-child {
+                margin-right: 0;
+              }
+              &.btn-action:hover {
+                color: $app-primary-color;
+              }
+              &.btn-close:hover {
+                color: rgba(0, 0, 0, 0.75);
+              }
+            }
+          }
+        }
+      }
+      .ant-modal-body {
+        padding: 0;
+
+        .header-modal {
+          height: 54px;
+          display: flex;
+          align-items: center;
+          border-radius: 10px 10px 0 0;
+          background: #dddddd;
+          padding: 0 68px 0 24px;
+          color: #192a3e;
+          .header-title {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  &.minimize-popup {
+    position: static !important;
+    .import-data-modal {
+      position: fixed;
+      z-index: 2;
+      bottom: 20px;
+      right: 20px;
+      top: unset;
+      width: 325px !important;
+      padding: 0;
+
+      .ant-modal-content {
+        background: transparent;
+        .ant-modal-close-x {
+          color: $defautl-font-color;
+        }
+        .header-modal {
+          background: $app-bg-box;
+          color: $defautl-font-color;
+        }
+        .upload-container {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.tooltip-workflow-help {
+  max-width: 400px;
+  .tooltip-content {
+    font-size: 12px;
+  }
+}

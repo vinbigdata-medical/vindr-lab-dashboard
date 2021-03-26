@@ -1,0 +1,171 @@
+@import '../../../variables.scss';
+
+.setting-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .header-action {
+    display: flex;
+    position: absolute;
+    top: 10px !important;
+    right: 36px;
+    width: unset !important;
+    .btn-update-project {
+      .btn {
+        min-width: 120px;
+        &:disabled {
+          color: rgba(209, 209, 215, 0.6);
+        }
+      }
+    }
+  }
+
+  .setting-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px 30px;
+
+    .form-update-project {
+      width: 100%;
+      position: relative;
+
+      .workflow-item {
+        .anticon-question-circle {
+          color: #fff;
+        }
+      }
+
+      .delete-project {
+        position: absolute;
+        right: 0;
+      }
+
+      .session-title {
+        margin-bottom: 8px;
+        color: $defautl-font-color;
+      }
+      .ant-form-item-label {
+        label {
+          color: $defautl-font-color;
+          min-width: 160px;
+        }
+      }
+
+      .ant-form-item-control {
+        max-width: 350px;
+        .ant-input,
+        .ant-select-selector {
+          background: $app-bg-page-content;
+          color: $defautl-font-color;
+        }
+        .ant-select-arrow {
+          color: $defautl-font-color;
+        }
+      }
+
+      .ant-form-item:not(.ant-form-item-has-error) {
+        .ant-form-item-control {
+          .ant-input {
+            border-color: $app-box-border-color;
+            &:focus,
+            &:hover {
+              border-color: $app-primary-color;
+            }
+          }
+          .ant-select:not(.ant-select-focused) {
+            .ant-select-selector {
+              border-color: $app-box-border-color;
+            }
+          }
+          .ant-select:not(.ant-select-disabled):hover {
+            .ant-select-selector {
+              border-color: $app-primary-color;
+            }
+          }
+        }
+      }
+
+      .assign-label-wrapper {
+        margin-bottom: 24px;
+        .select-label-group {
+          display: flex;
+          .form-item-lb-group {
+            width: 250px;
+          }
+          .btn-add-label-group {
+            margin-left: 8px;
+            .anticon-plus-circle {
+              font-size: 22px;
+            }
+          }
+        }
+
+        .labels-wrapper {
+          background: transparent;
+          border: 1px solid $app-box-border-color;
+          padding: 20px;
+          .labels-content {
+            .txt-title {
+              color: $defautl-font-color;
+            }
+          }
+        }
+      }
+
+      .assign-user-wrapper {
+        .lb-input {
+          color: $defautl-font-color;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+        }
+        .select-users {
+          padding: 8px 0;
+          .ant-form-item-control {
+            min-height: 350px;
+            background: $app-bg-box;
+            border-radius: $border-box-radius;
+            padding: 4px;
+            cursor: default;
+            .ant-select-selector {
+              display: flex;
+              flex-wrap: wrap-reverse;
+              background: $app-bg-box;
+              .ant-select-selection-item {
+                width: 100%;
+                background: #363a42;
+                border: none;
+                color: $defautl-font-color;
+                padding: 8px;
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                border-radius: $border-box-radius;
+                .ant-select-selection-item-remove {
+                  width: 22px;
+                  height: 22px;
+                  border-radius: 50%;
+                  background: #dadada;
+                }
+              }
+
+              .ant-select-selection-search {
+                margin: 10px 0 0 0;
+                width: 100% !important;
+                border: 1px solid $app-box-border-color;
+                border-radius: $border-box-radius;
+                padding: 5px;
+                .ant-select-selection-search-input {
+                  opacity: 1 !important;
+                  margin: 0 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

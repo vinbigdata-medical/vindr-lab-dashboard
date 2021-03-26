@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.breadcrumb-list {
+  font-weight: 400;
+  font-size: 16px;
+  .ant-breadcrumb-separator {
+    color: $defautl-font-color;
+  }
+  .breadcrumb-item {
+    color: $defautl-font-color;
+  }
+}

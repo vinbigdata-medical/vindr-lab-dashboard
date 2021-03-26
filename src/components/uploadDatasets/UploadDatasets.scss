@@ -1,0 +1,175 @@
+@import '../../variables.scss';
+
+.import-data-content {
+  .input-file {
+    display: none;
+  }
+  .header-modal {
+    .uploaded-info {
+      margin-left: 8px;
+    }
+  }
+  .progress-bar {
+    padding: 0 24px 12px;
+    background: $app-bg-box;
+    border-radius: 0 0 10px 10px;
+    .ant-progress-status-success {
+      .ant-progress-bg {
+        background-color: $app-primary-color;
+      }
+    }
+  }
+  .upload-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    .upload-drag-box {
+      max-width: 600px;
+      min-width: 520px;
+      height: 400px;
+      margin-bottom: 20px;
+      .drag-box {
+        height: 100%;
+        border-radius: $border-box-radius;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: #fafafa;
+        border: 1px dashed #d9d9d9;
+        border-radius: 2px;
+        cursor: pointer;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        display: flex;
+        align-items: center;
+
+        .drag-content {
+          p {
+            margin: 0;
+          }
+          .ant-upload-drag-icon {
+            margin-bottom: 20px;
+            .anticon-upload {
+              color: #38c789;
+              font-size: 48px;
+            }
+          }
+          .ant-upload-text {
+            font-weight: 500;
+            font-size: 16px;
+            font-size: 16px;
+          }
+          .ant-upload-text,
+          .ant-upload-hint {
+            padding: 0 8px;
+          }
+          .ant-upload-hint {
+            color: #d3d3d3;
+          }
+        }
+      }
+
+      .file-list {
+        background: #fff;
+        overflow: hidden;
+        .ReactVirtualized__List {
+          outline: none;
+        }
+        .file-item {
+          color: #26292e;
+          height: 35px;
+          line-height: 35px;
+          white-space: nowrap;
+          margin-bottom: 8px;
+          padding: 0 8px;
+          display: flex;
+          align-items: center;
+          background: #f8f8f8;
+          box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.11);
+          border-radius: 5px;
+
+          .file-icon {
+            margin-right: 4px;
+          }
+          .file-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0 4px;
+            margin-right: 12px;
+          }
+          .file-status {
+            margin-left: auto;
+            background: #e8e8e8;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 12px;
+            color: #fff;
+            cursor: pointer;
+            .ic-uploading {
+              font-size: 18px;
+              color: $app-primary-color;
+            }
+            &.done {
+              background: $app-primary-color;
+            }
+            &.error {
+              background: #f9c200;
+            }
+          }
+        }
+      }
+
+      &.hide-drag-box {
+        .drag-box {
+          display: none;
+        }
+        .file-list {
+          border: 1px solid $defautl-font-color;
+          height: 100%;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .btn-action {
+      padding: 12px 8px;
+      .btn {
+        min-width: 120px;
+        min-height: 42px;
+        border-radius: 4px;
+        border: 1px solid $app-primary-color;
+        color: $app-primary-color;
+        box-sizing: border-box;
+
+        &.btn-select-file {
+          margin-right: 20px;
+        }
+      }
+
+      .btn-primary {
+        color: #fff;
+        box-shadow: 6px 16px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .btn-stop {
+        color: #fff;
+        margin-right: 20px;
+        border-color: #ff4d4f;
+      }
+
+      .btn-export-log {
+        margin-right: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,230 @@
+@import '../../variables.scss';
+
+.study-list-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .page-header {
+    display: flex;
+    min-height: 60px;
+
+    .tab-list {
+      z-index: 10;
+      .tab-item {
+        padding: 0 8px;
+        cursor: pointer;
+        margin-right: 5px;
+        position: relative;
+        font-size: 16px;
+        &:hover {
+          color: $app-primary-color;
+        }
+        &.active-item {
+          color: $app-primary-color;
+          &::after {
+            content: ' ';
+            width: 100%;
+            height: 2px;
+            background: $app-primary-color;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  .page-content {
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 124px);
+    .tab-content {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      // css for header action
+      .header-action {
+        display: flex;
+        position: absolute;
+        top: 8px;
+        z-index: 0;
+        width: 100%;
+
+        .col-item {
+          text-align: right;
+        }
+
+        .search-box {
+          height: 35px;
+          margin-left: auto;
+          border-radius: $border-box-radius;
+          background: transparent;
+          max-width: 250px;
+          border-color: $app-box-border-color;
+          &.ant-input-affix-wrapper-focused,
+          &:hover {
+            border-color: $app-primary-color;
+          }
+          .ant-input-prefix {
+            color: $defautl-font-color;
+          }
+          .ant-input {
+            background: transparent;
+            color: $defautl-font-color;
+          }
+        }
+      }
+
+      // css for table content
+      .table-wrapper {
+        .header-table {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0 12px;
+          height: 48px;
+          align-items: flex-end;
+          .top-btn-group {
+            display: flex;
+            align-items: flex-end;
+            padding: 0 20px;
+            .selected-info {
+              margin-right: 20px;
+              font-size: 12px;
+              .label-txt {
+                margin-right: 6px;
+              }
+              .selected-item {
+                &.active {
+                  color: $app-primary-color;
+                }
+              }
+            }
+
+            .btn {
+              margin-right: 12px;
+              min-width: 75px;
+              padding-left: 0;
+              padding-right: 0;
+              font-size: 12px;
+              height: 28px;
+              &:disabled {
+                color: rgba(209, 209, 215, 0.6);
+                background: transparent;
+                border-color: rgba(209, 209, 215, 0.25);
+              }
+            }
+            .btn-assign {
+              text-align: center;
+              .ant-btn {
+                padding-left: 0;
+                padding-right: 0;
+                min-width: 75px;
+                height: 28px;
+                font-size: 12px;
+                &:disabled {
+                  color: rgba(209, 209, 215, 0.6);
+                  border-color: rgba(209, 209, 215, 0.25);
+                  background: transparent;
+                }
+              }
+            }
+          }
+        }
+        .table-content {
+          .study-status {
+            color: $defautl-font-color;
+            &.assigned {
+              color: #ffa000;
+            }
+            &.completed {
+              color: $app-primary-color;
+            }
+          }
+        }
+      }
+
+      .right-panel {
+        overflow: hidden;
+        padding: 8px 12px;
+        
+        .box-content {
+          margin-bottom: 25px;
+          .box-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+          .box-list {
+            border: 1px solid $app-box-border-color;
+            box-sizing: border-box;
+            border-radius: $border-box-radius;
+            padding: 12px 4px;
+            max-height: 300px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            .box-item {
+              display: flex;
+              font-size: 14px;
+              margin-bottom: 6px;
+              padding: 0 12px;
+              cursor: pointer;
+              height: 26px;
+              line-height: 26px;
+              border-radius: $border-box-radius;
+
+              &:hover,
+              &.is-active {
+                background-color: rgba(23, 185, 120, 0.2);
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+              .ic-item {
+                margin-right: 5px;
+              }
+              .lb-name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-right: 18px;
+              }
+              .total {
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fixed-widgets {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    .btn-open-guide {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+.export-label-modal {
+  .title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .exported-version {
+    margin-bottom: 32px;
+    .exported-table {
+      border: 1px solid #d9d9d9;
+    }
+    .pagination-content {
+      margin-top: 10px;
+      text-align: right;
+    }
+  }
+}

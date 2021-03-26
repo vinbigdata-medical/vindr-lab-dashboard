@@ -1,0 +1,35 @@
+.popup-context {
+  background-clip: padding-box;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  left: 0px;
+  list-style-type: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: fixed;
+  text-align: left;
+  top: 0px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 90px;
+  li {
+    clear: both;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    .btn-popup {
+      width: 100%;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.65);
+      &:hover {
+        background-color: #e6faef;
+      }
+      &[disabled] {
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

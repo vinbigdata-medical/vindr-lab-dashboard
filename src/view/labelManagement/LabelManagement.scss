@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.label-management-page {
+  display: flex;
+  flex-direction: column;
+  .page-content {
+    flex: 1;
+    padding: 8px;
+    .col-labels {
+      flex: 1;
+      .labels-wrapper {
+        padding: 8px 25px;
+      }
+    }
+  }
+}

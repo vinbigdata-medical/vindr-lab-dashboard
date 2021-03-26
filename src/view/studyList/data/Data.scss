@@ -1,0 +1,116 @@
+@import '../../../variables.scss';
+
+.data-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .data-container {
+    .table-wrapper {
+      .table-content {
+        .study-status {
+          color: $defautl-font-color;
+          &.assigned {
+            color: #ffa000;
+          }
+          &.completed {
+            color: $app-primary-color;
+          }
+        }
+      }
+    }
+
+    .right-panel {
+      .right-btn-group {
+        padding: 8px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btn-action {
+          width: 100%;
+          max-width: 220px;
+          border-radius: $border-box-radius;
+          &.btn-import {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.assign-labelers {
+  max-height: 250px;
+  overflow: hidden;
+  overflow-y: auto;
+  .assign-btn-group {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .labelers {
+    margin-bottom: 20px;
+    .check-box-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.tooltip-assign {
+  .ant-tooltip-inner {
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+.delete-modal {
+  .delete-modal-content {
+    margin-top: 15px;
+    .line-item {
+      display: flex;
+      align-items: center;
+      .line-icon {
+        font-size: 24px;
+        margin-right: 10px;
+        &.warning-icon {
+          color: #faad14;
+        }
+        &.success-icon {
+          color: $app-primary-color;
+        }
+        &.error-icon {
+          color: #ff4d4f;
+        }
+      }
+      .msg {
+        font-size: 18px;
+      }
+    }
+  }
+  .ant-modal-footer {
+    .btn-delete {
+      border: 1px solid #ff4d4f !important;
+    }
+  }
+}
+
+.assign-labeler-modal {
+  .form-content {
+    .ant-input-number {
+      width: 100%;
+    }
+  }
+}
+
+.export-label-modal {
+  .exported-table {
+    .export-lb-status {
+      text-transform: capitalize;
+      &.pending {
+        color: #ffa000;
+      }
+      &.done {
+        color: #17b978;
+      }
+    }
+  }
+}

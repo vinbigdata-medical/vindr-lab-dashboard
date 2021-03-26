@@ -1,0 +1,86 @@
+@import '../../variables.scss';
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    height: 53px;
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      .btn-create-project {
+        margin-left: 12px;
+        .anticon-plus-circle {
+          font-size: 22px;
+        }
+      }
+    }
+    
+  }
+  .page-content {
+    flex: 1;
+    padding: 20px;
+    max-height: calc(100vh - 109px);
+    overflow: hidden;
+    overflow-y: auto;
+
+    .loading-project {
+      position: absolute;
+      bottom: 80px;
+      left: 45%;
+    }
+  }
+
+  .project-list {
+    .card-project {
+      width: 264px;
+      height: 292px;
+      color: $defautl-font-color;
+      background: $app-bg-box;
+      border-radius: $border-box-radius;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .ant-card-cover {
+        width: 140px;
+        display: flex;
+        margin: 0 auto;
+        flex: 1;
+        align-items: center;
+      }
+
+      .ant-card-body {
+        padding: 14px;
+        .ant-card-meta {
+          background: #363a42;
+          padding: 0 22px;
+          border-radius: $border-box-radius;
+          height: 95px;
+          display: flex;
+          align-items: center;
+          .ant-card-meta-detail {
+            .ant-card-meta-title {
+              color: $defautl-font-color;
+            }
+            .ant-card-meta-description {
+              color: $defautl-font-color;
+              font-size: 13px;
+            }
+          }
+          .total-study {
+            color: $app-primary-color;
+            margin-left: 6px;
+            text-transform: lowercase;
+            
+          }
+        }
+      }
+    }
+  }
+}

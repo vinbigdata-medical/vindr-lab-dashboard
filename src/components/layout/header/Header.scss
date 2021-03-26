@@ -1,0 +1,58 @@
+@import '../../../variables.scss';
+
+.ant-layout-header {
+  background: $app-bg-color;
+  padding: 0 8px;
+  height: $header-height;
+  line-height: $header-height;
+  color: $defautl-font-color;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+
+    .header-left-content {
+      height: $header-height;
+      display: flex;
+      align-items: center;
+      .app-logo {
+        cursor: pointer;
+        .img-logo {
+          height: 34px;
+          max-width: 135px;
+        }
+      }
+    }
+
+    .project-name {
+      font-size: 16px;
+    }
+
+    .header-right-content {
+      display: flex;
+      .user-info {
+        display: flex;
+        align-items: center;
+        cursor: default;
+        margin-left: 40px;
+        font-weight: 500;
+        .user-name {
+          margin-right: 8px;
+        }
+      }
+
+      .switch-view-mode {
+        .ant-radio-button-wrapper {
+          font-size: 12px;
+        }
+        .ant-radio-button-wrapper:not(.ant-radio-button-wrapper-checked) {
+          background: transparent;
+          color: $defautl-font-color;
+          border-color: $app-box-border-color;
+        }
+      }
+    }
+  }
+}
